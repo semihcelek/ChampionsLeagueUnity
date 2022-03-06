@@ -2,11 +2,11 @@ using SemihCelek.ChampionsLeague.ChampionsLeague.Models.Matches;
 
 namespace SemihCelek.ChampionsLeague.ChampionsLeague.Controllers
 {
-    public class SemiFinalController
+    public class ExecuteSemiFinalController
     {
         private ILeagueMatchExecutor _semiFinalExecutor;
 
-        public SemiFinalController(ILeagueMatchExecutor semiFinalExecutor)
+        public ExecuteSemiFinalController(ILeagueMatchExecutor semiFinalExecutor)
         {
             _semiFinalExecutor = semiFinalExecutor;
         }

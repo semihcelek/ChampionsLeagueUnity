@@ -5,10 +5,13 @@ namespace SemihCelek.ChampionsLeague.ChampionsLeague.Controllers
 {
     public class ExecuteGroupMatchesController
     {
-        [Inject(Id="GroupMatchExecutor")]
         private ILeagueMatchExecutor _groupMatchExecutor;
 
-        public ExecuteGroupMatchesController(ILeagueMatchExecutor groupMatchExecutor)
+        public ExecuteGroupMatchesController
+            (
+            [Inject(Id = "GroupMatchExecutor")] 
+            ILeagueMatchExecutor groupMatchExecutor
+            )
         {
             _groupMatchExecutor = groupMatchExecutor;
         }

@@ -9,6 +9,7 @@ using SemihCelek.ChampionsLeague.ChampionsLeague.Persistence;
 using SemihCelek.ChampionsLeague.ChampionsLeague.Persistence.Repositories;
 using SemihCelek.ChampionsLeague.ChampionsLeague.Persistence.Repositories.TeamRepositories;
 using SemihCelek.ChampionsLeague.ChampionsLeague.Utils;
+using SemihCelek.ChampionsLeague.ChampionsLeague.Views;
 using Zenject;
 
 namespace SemihCelek.ChampionsLeague.ChampionsLeague
@@ -17,7 +18,7 @@ namespace SemihCelek.ChampionsLeague.ChampionsLeague
     {
         public override void InstallBindings()
         {
-            Container.Bind<ITeamDataPathFinder>().To<TeamDataPathFinder>().AsSingle();
+            Container.Bind<ITeamDataPathFinder>().To<EditorTeamDataPathFinder>().AsSingle();
             Container.Bind<IStorageContext>().To<LocalStorageContext>().AsSingle();
             Container.Bind<IInitialTeamModelRepository>().To<InitialTeamModelRepository>().AsSingle();
             Container.Bind<IPotRepository>().To<PotRepository>().AsSingle();
@@ -48,10 +49,13 @@ namespace SemihCelek.ChampionsLeague.ChampionsLeague
             Container.Bind<ExecuteQuarterFinalController>().AsSingle();
 
             Container.Bind<PrepareSemiFinalController>().AsSingle();
-            Container.Bind<SemiFinalController>().AsSingle();
+            Container.Bind<ExecuteSemiFinalController>().AsSingle();
 
             Container.Bind<PrepareFinalRound>().AsSingle();
             Container.Bind<FinalController>().AsSingle();
+            
+            Container.Bind<GroupMatchView>().AsSingle();
+
         }
     }
 }
